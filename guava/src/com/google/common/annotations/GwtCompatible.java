@@ -54,7 +54,7 @@ import java.lang.annotation.Target;
  *
  * <p>Note that a {@code GwtCompatible} type may have some {@link GwtIncompatible} methods.
  *
- *
+ * google web toolkit,标识这个注解的类，代表和gwt兼容
  * @author Charles Fry
  * @author Hayward Chan
  */
