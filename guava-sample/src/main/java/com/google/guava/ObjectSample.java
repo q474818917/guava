@@ -28,7 +28,7 @@ public class ObjectSample {
             System.out.println(p.getUsername());
         }
 
-        Collections.sort(personList);
+        //Collections.sort(personList);
         for(Person p : personList){
             System.out.println(p.getUsername());
         }

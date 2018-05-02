@@ -19,6 +19,7 @@ package com.google.common.hash;
 import static com.google.common.base.Charsets.UTF_8;
 import static java.util.Arrays.asList;
 
+import com.google.common.base.FinalizableReferenceQueue;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableTable;
 import com.google.common.collect.Lists;
@@ -34,6 +35,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
+import java.util.logging.Logger;
+
 import junit.framework.TestCase;
 
 /**
@@ -46,6 +49,9 @@ import junit.framework.TestCase;
  * @author Kurt Alfred Kluever
  */
 public class HashingTest extends TestCase {
+
+  private static final Logger logger = Logger.getLogger(HashingTest.class.getName());
+
   public void testMd5() {
     HashTestUtils.checkAvalanche(Hashing.md5(), 100, 0.4);
     HashTestUtils.checkNo2BitCharacteristics(Hashing.md5());
