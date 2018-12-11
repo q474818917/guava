@@ -12,15 +12,25 @@ public class Person {
     private String username;
     private String password;
     private int age;
+    private double sales;
 
     public Person() {
 
     }
 
-    public Person(String username, String password, int age) {
+    public Person(String username, String password, int age, double sales) {
         this.username = username;
         this.password = password;
         this.age = age;
+        this.sales = sales;
+    }
+
+    public double getSales() {
+        return sales;
+    }
+
+    public void setSales(double sales) {
+        this.sales = sales;
     }
 
     public String getUsername() {
