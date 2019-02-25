@@ -1,4 +1,4 @@
-package main.java.com.google.guava.jdk;
+package com.google.guava.common;
 
 import com.google.common.collect.Lists;
 

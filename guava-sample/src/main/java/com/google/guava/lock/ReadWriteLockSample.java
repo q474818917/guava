@@ -1,4 +1,4 @@
-package com.google.guava.jdk;
+package com.google.guava.lock;
 
 import java.util.Random;
 import java.util.concurrent.locks.ReadWriteLock;

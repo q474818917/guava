@@ -3,6 +3,9 @@ package com.google.guava.cache;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * LinkedHashMap 双向链表，在构造accessOrder设置true后，就变成了天然的LRU
+ */
 public class LRUCache {
 
     private Map<Integer, Integer> map;
