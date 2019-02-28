@@ -1,4 +1,4 @@
-package com.google.guava.jdk;
+package com.google.guava.common;
 
 import java.util.Optional;
 

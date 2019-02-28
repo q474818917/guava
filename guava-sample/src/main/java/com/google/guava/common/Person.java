@@ -7,16 +7,30 @@ import com.google.common.collect.ComparisonChain;
 /**
  * Created by wangzx on 2017/3/2.
  */
-public class Person implements Comparable<Person>{
+public class Person {
 
     private String username;
     private String password;
     private int age;
+    private double sales;
 
-    public Person(String username, String password, int age) {
+    public Person() {
+
+    }
+
+    public Person(String username, String password, int age, double sales) {
         this.username = username;
         this.password = password;
         this.age = age;
+        this.sales = sales;
+    }
+
+    public double getSales() {
+        return sales;
+    }
+
+    public void setSales(double sales) {
+        this.sales = sales;
     }
 
     public String getUsername() {
@@ -43,19 +57,33 @@ public class Person implements Comparable<Person>{
         this.age = age;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(this.username, this.password);
-    }
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this).add("username", this.username)
-                .add("password", this.password).toString();
+        return "Person{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", age=" + age +
+                '}';
     }
 
     @Override
-    public int compareTo(Person o) {
-        return ComparisonChain.start().compare(this.age, o.getAge()).result();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Person person = (Person) o;
+
+        if (age != person.age) return false;
+        if (username != null ? !username.equals(person.username) : person.username != null) return false;
+        return password != null ? password.equals(person.password) : person.password == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = username != null ? username.hashCode() : 0;
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + age;
+        return result;
     }
 }

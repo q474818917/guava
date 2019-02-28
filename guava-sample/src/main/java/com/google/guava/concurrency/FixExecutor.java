@@ -5,7 +5,13 @@ import java.util.concurrent.Executors;
 
 /**
  * Created by dwarf on 2019/2/26.
- * 第6个线程执行时,是否会排队等待 or 抛出异常 or 继续执行
+ * corePoolSize\maximumPoolSize,
+ * 1,当corePoolSize < maximumPoolSize时,且corePoolSize已满,则会新建非核心线程
+ * 2,当corePoolSize = maximumPoolSize时,则会进入到队列
+ * 3,当队列已满时,则会拒绝task,4种拒绝策略(直接抛弃,抛弃最老的任务,交给调用线程,抛出异常)
+ * 4,LinkedBlockingQueue:这个队列是无限制的
+ *
+ * 第6个线程执行时,会排队等待
  */
 public class FixExecutor {
 
@@ -17,7 +23,11 @@ public class FixExecutor {
             es.submit(new Runnable() {
                 @Override
                 public void run() {
-                    while(true){
+                    System.out.println("当前线程是" + Thread.currentThread().getName());
+                    try {
+                        Thread.sleep(10000L);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 }
             });

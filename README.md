@@ -1,5 +1,8 @@
 # Guava: Google Core Libraries for Java
-
+# shortCut key
+    + implement class ： control + H
+    + search class： command + N
+    
 [![Build Status](https://travis-ci.org/google/guava.svg?branch=master)](https://travis-ci.org/google/guava)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava)
 
